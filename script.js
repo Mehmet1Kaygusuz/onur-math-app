@@ -419,7 +419,7 @@ function loadQuestion() {
 // ===============================
 
 function createOptionCards(q) {
-    const letters = shuffle(Object.keys(q.options));
+    const letters = ["O", "N", "U", "R"]; // SABİT SIRA
 
     letters.forEach(letter => {
         const card = document.createElement("div");
@@ -432,6 +432,7 @@ function createOptionCards(q) {
         optionsBox.appendChild(card);
     });
 }
+
 
 
 // ===============================
