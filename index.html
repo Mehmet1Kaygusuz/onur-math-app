@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matematik Soru Bankası</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Üst Sayaç Alanı -->
+        <div class="status-bar">
+            <span id="question-counter">Soru 1 / 10</span>
+            <span id="correct-counter">Doğru: 0</span>
+            <span id="wrong-counter">Yanlış: 0</span>
+        </div>
+
+        <h1 class="title">Matematik Soru Bankası</h1>
+
+        <div id="question-box" class="box">
+            <h2 id="unit"></h2>
+            <p id="question-text"></p>
+            <p id="level"></p>
+        </div>
+
+        <!-- ONUR Seçenek Kartları -->
+        <div id="options-box" class="options-box">
+            <!-- Kartlar JS ile gelecek -->
+        </div>
+
+        <!-- Çözüm Butonu -->
+        <button id="show-step-btn" class="btn" disabled>Çözümü / İpucunu Göster</button>
+
+        <!-- İpucu ve Çözüm Alanı -->
+        <div id="steps-box" class="box">
+            <h3>İpuçları ve Çözüm</h3>
+            <div id="steps"></div>
+        </div>
+
+        <button id="next-question-btn" class="btn secondary">Sonraki Soru</button>
+
+        <p id="timer" class="timer"></p>
+
+        <p class="signature">Bu soru bankası Onur Batır’a ithaf edilmiştir.</p>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
