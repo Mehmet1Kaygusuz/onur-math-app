@@ -345,12 +345,6 @@ const questions = [
 
 
 
-
-
-
-
-
-
 // ===============================
 //  D E Ğ İ Ş K E N L E R
 // ===============================
@@ -380,6 +374,15 @@ const timerEl = document.getElementById("timer");
 const counterEl = document.getElementById("question-counter");
 const correctCounterEl = document.getElementById("correct-counter");
 const wrongCounterEl = document.getElementById("wrong-counter");
+
+
+// ===============================
+//  S E Ç E N E K   K A R I Ş T I R M A
+// ===============================
+
+function shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
 
 
 // ===============================
@@ -416,7 +419,9 @@ function loadQuestion() {
 // ===============================
 
 function createOptionCards(q) {
-    Object.keys(q.options).forEach(letter => {
+    const letters = shuffle(Object.keys(q.options));
+
+    letters.forEach(letter => {
         const card = document.createElement("div");
         card.className = "option-card";
         card.dataset.option = letter;
@@ -437,7 +442,6 @@ function handleAnswer(selected, card) {
     const q = questions[currentQuestionIndex];
 
     const allCards = document.querySelectorAll(".option-card");
-
     allCards.forEach(c => c.classList.add("option-disabled"));
 
     if (selected === q.correct) {
@@ -520,6 +524,14 @@ function lockButton() {
 // ===============================
 
 function nextQuestion() {
+
+    if (currentNumber >= totalQuestions) {
+        alert("Test bitti! 🎉");
+        nextQuestionBtn.disabled = true;
+        showStepBtn.disabled = true;
+        return;
+    }
+
     currentNumber++;
     loadRandomQuestion();
 }
