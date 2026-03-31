@@ -8,7 +8,7 @@ const questions = [
     level: "Kolay",
     question: "lim (x→3) (x² - 9) / (x - 3) ifadesinin sonucu nedir?",
     options: { O: "3", N: "6", U: "5", R: "9" },
-    correct: "N",
+    correct: "R",
     hints: [
       "Payı çarpanlara ayır.",
       "x² - 9 = (x - 3)(x + 3).",
@@ -25,7 +25,7 @@ const questions = [
     level: "Orta",
     question: "f(x) = x³ - 6x fonksiyonunun türevinin köklerinden biri nedir?",
     options: { O: "0", N: "1", U: "2", R: "3" },
-    correct: "U",
+    correct: "N",
     hints: [
       "Önce türev al.",
       "f'(x) = 3x² - 6.",
@@ -42,7 +42,7 @@ const questions = [
     level: "Kolay",
     question: "∫ 4x dx ifadesinin sonucu nedir?",
     options: { O: "2x² + C", N: "4x² + C", U: "x² + C", R: "8x + C" },
-    correct: "O",
+    correct: "U",
     hints: [
       "xⁿ → xⁿ⁺¹/(n+1).",
       "4x → 4 * x²/2.",
@@ -59,7 +59,7 @@ const questions = [
     level: "Kolay",
     question: "f(x) = 2x + 1 fonksiyonunun f(5) değeri nedir?",
     options: { O: "9", N: "11", U: "7", R: "12" },
-    correct: "N",
+    correct: "O",
     hints: [
       "x yerine 5 yaz.",
       "2×5 = 10.",
@@ -76,7 +76,7 @@ const questions = [
     level: "Kolay",
     question: "sin(45°) kaçtır?",
     options: { O: "√2/2", N: "1/2", U: "√3/2", R: "1" },
-    correct: "O",
+    correct: "R",
     hints: [
       "45° özel açıdır.",
       "sin(45°) = cos(45°).",
@@ -93,7 +93,7 @@ const questions = [
     level: "Orta",
     question: "lim (x→∞) (3x + 2) / (x - 5) sonucu nedir?",
     options: { O: "3", N: "0", U: "∞", R: "1" },
-    correct: "O",
+    correct: "U",
     hints: [
       "Baskın terimler x’li olanlardır.",
       "3x / x = 3.",
@@ -110,7 +110,7 @@ const questions = [
     level: "Orta",
     question: "f(x) = √x fonksiyonunun türevi nedir?",
     options: { O: "1/(2√x)", N: "√x", U: "2√x", R: "1/x" },
-    correct: "O",
+    correct: "N",
     hints: [
       "√x = x^(1/2).",
       "Türev: (1/2)x^(-1/2).",
@@ -127,7 +127,7 @@ const questions = [
     level: "Orta",
     question: "∫ (2x + 3) dx sonucu nedir?",
     options: { O: "x² + 3x + C", N: "2x² + 3x + C", U: "x² + C", R: "2x² + C" },
-    correct: "O",
+    correct: "R",
     hints: [
       "Her terimi ayrı integral al.",
       "2x → x².",
@@ -144,7 +144,7 @@ const questions = [
     level: "Orta",
     question: "f(x) = x² - 4 fonksiyonunun köklerinden biri nedir?",
     options: { O: "2", N: "4", U: "-4", R: "-2" },
-    correct: "O",
+    correct: "N",
     hints: [
       "x² - 4 = 0.",
       "x² = 4.",
@@ -161,7 +161,7 @@ const questions = [
     level: "Orta",
     question: "cos(60°) kaçtır?",
     options: { O: "1/2", N: "√3/2", U: "1", R: "0" },
-    correct: "O",
+    correct: "U",
     hints: [
       "60° özel açıdır.",
       "cos(60°) = 1/2.",
@@ -178,7 +178,7 @@ const questions = [
     level: "Kolay",
     question: "2x - 5 = 9 denkleminin çözümü nedir?",
     options: { O: "7", N: "5", U: "6", R: "4" },
-    correct: "U",
+    correct: "R",
     hints: [
       "5’i karşıya at.",
       "2x = 14.",
@@ -195,7 +195,7 @@ const questions = [
     level: "Orta",
     question: "log₂(8) kaçtır?",
     options: { O: "2", N: "3", U: "4", R: "1" },
-    correct: "N",
+    correct: "O",
     hints: [
       "8 = 2³.",
       "log₂(2³) = 3.",
@@ -212,7 +212,7 @@ const questions = [
     level: "Orta",
     question: "aₙ = 3n + 1 dizisinin 5. terimi nedir?",
     options: { O: "13", N: "16", U: "19", R: "10" },
-    correct: "O",
+    correct: "U",
     hints: [
       "n yerine 5 yaz.",
       "3×5 = 15.",
@@ -229,7 +229,7 @@ const questions = [
     level: "Orta",
     question: "(2,3) ve (6,7) noktaları arasındaki uzaklık nedir?",
     options: { O: "4", N: "2√2", U: "6", R: "8" },
-    correct: "O",
+    correct: "R",
     hints: [
       "Formül: √((x2-x1)² + (y2-y1)²).",
       "Farklar 4 ve 4.",
@@ -246,7 +246,7 @@ const questions = [
     level: "Zor",
     question: "lim (x→0) sin(x)/x kaçtır?",
     options: { O: "1", N: "0", U: "∞", R: "x" },
-    correct: "O",
+    correct: "N",
     hints: [
       "Özel bir limittir.",
       "sin(x)/x → 1.",
@@ -263,7 +263,7 @@ const questions = [
     level: "Zor",
     question: "f(x) = eˣ fonksiyonunun türevi nedir?",
     options: { O: "eˣ", N: "1", U: "x·eˣ", R: "ln(x)" },
-    correct: "O",
+    correct: "R",
     hints: [
       "eˣ’in türevi kendisidir.",
       "Bu özel bir kuraldır.",
@@ -280,7 +280,7 @@ const questions = [
     level: "Zor",
     question: "∫ 1/x dx sonucu nedir?",
     options: { O: "ln|x| + C", N: "1/(x²) + C", U: "x + C", R: "x² + C" },
-    correct: "O",
+    correct: "N",
     hints: [
       "1/x’in integrali ln|x|’tir.",
       "Mutlak değer unutma.",
@@ -297,7 +297,7 @@ const questions = [
     level: "Zor",
     question: "f(x) = 1/(x-2) fonksiyonunun tanım kümesi nedir?",
     options: { O: "x ≠ 2", N: "x ≠ 0", U: "x > 2", R: "x < 2" },
-    correct: "O",
+    correct: "U",
     hints: [
       "Payda 0 olamaz.",
       "x - 2 = 0 → x = 2.",
@@ -314,7 +314,7 @@ const questions = [
     level: "Zor",
     question: "tan(45°) kaçtır?",
     options: { O: "1", N: "0", U: "√3", R: "1/√3" },
-    correct: "O",
+    correct: "R",
     hints: [
       "45° özel açıdır.",
       "sin(45°) = cos(45°).",
@@ -331,7 +331,7 @@ const questions = [
     level: "Zor",
     question: "x² - 5x + 6 = 0 denkleminin köklerinden biri nedir?",
     options: { O: "2", N: "3", U: "5", R: "6" },
-    correct: "O",
+    correct: "N",
     hints: [
       "Çarpanlara ayır.",
       "(x-2)(x-3).",
