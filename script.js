@@ -1,350 +1,233 @@
 // ===============================
 //  S O R U   B A N K A S I
 // ===============================
+
 const questions = [
   {
     id: 1,
     unit: "Limit",
     level: "Kolay",
-    question: "lim (x→3) (x² - 9) / (x - 3) ifadesinin sonucu nedir?",
-    options: { O: "3", N: "6", U: "5", R: "9" },
-    correct: "R",
-    hints: [
-      "Payı çarpanlara ayır.",
-      "x² - 9 = (x - 3)(x + 3).",
-      "Sadeleştirme yap.",
-      "x yerine 3 yaz."
-    ],
-    partialSolution: "Sadeleştirme sonrası x + 3 kalır.",
-    fullSolution: "3 + 3 = 6."
+    question: "lim (x→3) (x² - 9) / (x - 3) nedir?",
+    correctAnswer: "6",
+    wrongAnswers: ["3", "5", "9"],
+    hints: ["Çarpanlara ayır.", "Sadeleştir.", "x yerine 3 yaz."],
+    partialSolution: "x+3 kalır.",
+    fullSolution: "6"
   },
-
   {
     id: 2,
     unit: "Türev",
     level: "Orta",
-    question: "f(x) = x³ - 6x fonksiyonunun türevinin köklerinden biri nedir?",
-    options: { O: "0", N: "1", U: "2", R: "3" },
-    correct: "N",
-    hints: [
-      "Önce türev al.",
-      "f'(x) = 3x² - 6.",
-      "3x² - 6 = 0 çöz.",
-      "x² = 2 → x = ±√2."
-    ],
-    partialSolution: "Köklerden biri √2’dir.",
-    fullSolution: "Yaklaşık 1.41 → en yakın seçenek 2."
+    question: "f'(x)=3x²-6 köklerinden biri?",
+    correctAnswer: "√2",
+    wrongAnswers: ["0", "1", "3"],
+    hints: ["0'a eşitle.", "x²=2."],
+    partialSolution: "±√2",
+    fullSolution: "√2"
   },
-
   {
     id: 3,
     unit: "İntegral",
     level: "Kolay",
-    question: "∫ 4x dx ifadesinin sonucu nedir?",
-    options: { O: "2x² + C", N: "4x² + C", U: "x² + C", R: "8x + C" },
-    correct: "U",
-    hints: [
-      "xⁿ → xⁿ⁺¹/(n+1).",
-      "4x → 4 * x²/2.",
-      "4/2 = 2.",
-      "Sonucu yaz."
-    ],
-    partialSolution: "4x → 2x².",
-    fullSolution: "2x² + C."
+    question: "∫ 4x dx",
+    correctAnswer: "2x² + C",
+    wrongAnswers: ["4x² + C", "x² + C", "8x + C"],
+    hints: ["Güç artır."],
+    partialSolution: "2x²",
+    fullSolution: "2x² + C"
   },
-
   {
     id: 4,
-    unit: "Fonksiyonlar",
+    unit: "Fonksiyon",
     level: "Kolay",
-    question: "f(x) = 2x + 1 fonksiyonunun f(5) değeri nedir?",
-    options: { O: "9", N: "11", U: "7", R: "12" },
-    correct: "O",
-    hints: [
-      "x yerine 5 yaz.",
-      "2×5 = 10.",
-      "10 + 1 = 11.",
-      "Sonucu yaz."
-    ],
-    partialSolution: "f(5) = 2(5) + 1.",
-    fullSolution: "Sonuç 11."
+    question: "f(x)=2x+1, f(5)?",
+    correctAnswer: "11",
+    wrongAnswers: ["9", "7", "12"],
+    hints: ["Yerine yaz."],
+    partialSolution: "10+1",
+    fullSolution: "11"
   },
-
   {
     id: 5,
     unit: "Trigonometri",
     level: "Kolay",
-    question: "sin(45°) kaçtır?",
-    options: { O: "√2/2", N: "1/2", U: "√3/2", R: "1" },
-    correct: "R",
-    hints: [
-      "45° özel açıdır.",
-      "sin(45°) = cos(45°).",
-      "Değer √2/2’dir.",
-      "Sonucu yaz."
-    ],
-    partialSolution: "sin(45°) = √2/2.",
-    fullSolution: "Doğru cevap √2/2."
+    question: "sin(45°)?",
+    correctAnswer: "√2/2",
+    wrongAnswers: ["1/2", "√3/2", "1"],
+    hints: ["Özel açı"],
+    partialSolution: "√2/2",
+    fullSolution: "√2/2"
   },
-
   {
     id: 6,
     unit: "Limit",
     level: "Orta",
-    question: "lim (x→∞) (3x + 2) / (x - 5) sonucu nedir?",
-    options: { O: "3", N: "0", U: "∞", R: "1" },
-    correct: "U",
-    hints: [
-      "Baskın terimler x’li olanlardır.",
-      "3x / x = 3.",
-      "Sabitler limitte önemsizdir.",
-      "Sonucu yaz."
-    ],
-    partialSolution: "Baskın oran 3’tür.",
-    fullSolution: "Limit 3."
+    question: "lim x→∞ (3x+2)/(x-5)",
+    correctAnswer: "3",
+    wrongAnswers: ["0", "∞", "1"],
+    hints: ["Baskın terim"],
+    partialSolution: "3",
+    fullSolution: "3"
   },
-
   {
     id: 7,
     unit: "Türev",
     level: "Orta",
-    question: "f(x) = √x fonksiyonunun türevi nedir?",
-    options: { O: "1/(2√x)", N: "√x", U: "2√x", R: "1/x" },
-    correct: "N",
-    hints: [
-      "√x = x^(1/2).",
-      "Türev: (1/2)x^(-1/2).",
-      "x^(-1/2) = 1/√x.",
-      "Sonucu yaz."
-    ],
-    partialSolution: "f'(x) = 1/(2√x).",
-    fullSolution: "Doğru cevap budur."
+    question: "√x türevi?",
+    correctAnswer: "1/(2√x)",
+    wrongAnswers: ["√x", "2√x", "1/x"],
+    hints: ["x^(1/2)"],
+    partialSolution: "1/(2√x)",
+    fullSolution: "1/(2√x)"
   },
-
   {
     id: 8,
     unit: "İntegral",
     level: "Orta",
-    question: "∫ (2x + 3) dx sonucu nedir?",
-    options: { O: "x² + 3x + C", N: "2x² + 3x + C", U: "x² + C", R: "2x² + C" },
-    correct: "R",
-    hints: [
-      "Her terimi ayrı integral al.",
-      "2x → x².",
-      "3 → 3x.",
-      "Sonucu yaz."
-    ],
-    partialSolution: "x² + 3x + C.",
-    fullSolution: "Doğru sonuç budur."
+    question: "∫ (2x+3) dx",
+    correctAnswer: "x² + 3x + C",
+    wrongAnswers: ["2x² + C", "x² + C", "2x² + 3x + C"],
+    hints: ["Ayrı al"],
+    partialSolution: "x²+3x",
+    fullSolution: "x²+3x+C"
   },
-
   {
     id: 9,
-    unit: "Fonksiyonlar",
+    unit: "Fonksiyon",
     level: "Orta",
-    question: "f(x) = x² - 4 fonksiyonunun köklerinden biri nedir?",
-    options: { O: "2", N: "4", U: "-4", R: "-2" },
-    correct: "N",
-    hints: [
-      "x² - 4 = 0.",
-      "x² = 4.",
-      "x = ±2.",
-      "Pozitif olanı seç."
-    ],
-    partialSolution: "Kökler ±2.",
-    fullSolution: "Doğru seçenek 2."
+    question: "x²-4 kök?",
+    correctAnswer: "2",
+    wrongAnswers: ["4", "-4", "-2"],
+    hints: ["±2"],
+    partialSolution: "±2",
+    fullSolution: "2"
   },
-
   {
     id: 10,
     unit: "Trigonometri",
     level: "Orta",
-    question: "cos(60°) kaçtır?",
-    options: { O: "1/2", N: "√3/2", U: "1", R: "0" },
-    correct: "U",
-    hints: [
-      "60° özel açıdır.",
-      "cos(60°) = 1/2.",
-      "sin(30°) ile aynıdır.",
-      "Sonucu yaz."
-    ],
-    partialSolution: "cos(60°) = 1/2.",
-    fullSolution: "Doğru cevap 1/2."
+    question: "cos(60°)?",
+    correctAnswer: "1/2",
+    wrongAnswers: ["√3/2", "1", "0"],
+    hints: ["Özel açı"],
+    partialSolution: "1/2",
+    fullSolution: "1/2"
   },
-
   {
     id: 11,
     unit: "Cebir",
     level: "Kolay",
-    question: "2x - 5 = 9 denkleminin çözümü nedir?",
-    options: { O: "7", N: "5", U: "6", R: "4" },
-    correct: "R",
-    hints: [
-      "5’i karşıya at.",
-      "2x = 14.",
-      "x = 7.",
-      "Sonucu yaz."
-    ],
-    partialSolution: "x = 7.",
-    fullSolution: "Doğru seçenek 7 → U."
+    question: "2x-5=9",
+    correctAnswer: "7",
+    wrongAnswers: ["5", "6", "4"],
+    hints: ["+5"],
+    partialSolution: "2x=14",
+    fullSolution: "7"
   },
-
   {
     id: 12,
-    unit: "Logaritma",
+    unit: "Log",
     level: "Orta",
-    question: "log₂(8) kaçtır?",
-    options: { O: "2", N: "3", U: "4", R: "1" },
-    correct: "O",
-    hints: [
-      "8 = 2³.",
-      "log₂(2³) = 3.",
-      "Taban aynı.",
-      "Sonucu yaz."
-    ],
-    partialSolution: "3.",
-    fullSolution: "Doğru cevap 3."
+    question: "log₂(8)",
+    correctAnswer: "3",
+    wrongAnswers: ["2", "4", "1"],
+    hints: ["2³"],
+    partialSolution: "3",
+    fullSolution: "3"
   },
-
   {
     id: 13,
-    unit: "Diziler",
+    unit: "Dizi",
     level: "Orta",
-    question: "aₙ = 3n + 1 dizisinin 5. terimi nedir?",
-    options: { O: "13", N: "16", U: "19", R: "10" },
-    correct: "U",
-    hints: [
-      "n yerine 5 yaz.",
-      "3×5 = 15.",
-      "15 + 1 = 16.",
-      "Sonucu yaz."
-    ],
-    partialSolution: "a₅ = 16.",
-    fullSolution: "Doğru seçenek 16 → O."
+    question: "aₙ=3n+1, n=5",
+    correctAnswer: "16",
+    wrongAnswers: ["13", "19", "10"],
+    hints: ["3*5"],
+    partialSolution: "15+1",
+    fullSolution: "16"
   },
-
   {
     id: 14,
     unit: "Analitik",
     level: "Orta",
-    question: "(2,3) ve (6,7) noktaları arasındaki uzaklık nedir?",
-    options: { O: "4", N: "2√2", U: "6", R: "8" },
-    correct: "R",
-    hints: [
-      "Formül: √((x2-x1)² + (y2-y1)²).",
-      "Farklar 4 ve 4.",
-      "4² + 4² = 32.",
-      "√32 = 4√2 → en yakın 4."
-    ],
-    partialSolution: "Uzaklık 4√2 ≈ 5.65.",
-    fullSolution: "En yakın seçenek 4."
+    question: "mesafe (2,3)-(6,7)",
+    correctAnswer: "4√2",
+    wrongAnswers: ["4", "6", "8"],
+    hints: ["√32"],
+    partialSolution: "≈5.65",
+    fullSolution: "4√2"
   },
-
   {
     id: 15,
     unit: "Limit",
     level: "Zor",
-    question: "lim (x→0) sin(x)/x kaçtır?",
-    options: { O: "1", N: "0", U: "∞", R: "x" },
-    correct: "N",
-    hints: [
-      "Özel bir limittir.",
-      "sin(x)/x → 1.",
-      "x radyan olmalı.",
-      "Sonucu yaz."
-    ],
-    partialSolution: "Limit 1.",
-    fullSolution: "Doğru cevap 1."
+    question: "lim x→0 sinx/x",
+    correctAnswer: "1",
+    wrongAnswers: ["0", "∞", "x"],
+    hints: ["Özel limit"],
+    partialSolution: "1",
+    fullSolution: "1"
   },
-
   {
     id: 16,
     unit: "Türev",
     level: "Zor",
-    question: "f(x) = eˣ fonksiyonunun türevi nedir?",
-    options: { O: "eˣ", N: "1", U: "x·eˣ", R: "ln(x)" },
-    correct: "R",
-    hints: [
-      "eˣ’in türevi kendisidir.",
-      "Bu özel bir kuraldır.",
-      "Her x için geçerlidir.",
-      "Sonucu yaz."
-    ],
-    partialSolution: "f'(x) = eˣ.",
-    fullSolution: "Doğru cevap eˣ."
+    question: "e^x türevi?",
+    correctAnswer: "e^x",
+    wrongAnswers: ["1", "x·e^x", "lnx"],
+    hints: ["Kendisi"],
+    partialSolution: "e^x",
+    fullSolution: "e^x"
   },
-
   {
     id: 17,
     unit: "İntegral",
     level: "Zor",
-    question: "∫ 1/x dx sonucu nedir?",
-    options: { O: "ln|x| + C", N: "1/(x²) + C", U: "x + C", R: "x² + C" },
-    correct: "N",
-    hints: [
-      "1/x’in integrali ln|x|’tir.",
-      "Mutlak değer unutma.",
-      "Bu özel bir integraldir.",
-      "Sonucu yaz."
-    ],
-    partialSolution: "ln|x| + C.",
-    fullSolution: "Doğru cevap budur."
+    question: "∫1/x dx",
+    correctAnswer: "ln|x| + C",
+    wrongAnswers: ["1/x²", "x", "x²"],
+    hints: ["Özel"],
+    partialSolution: "ln|x|",
+    fullSolution: "ln|x|+C"
   },
-
   {
     id: 18,
-    unit: "Fonksiyonlar",
+    unit: "Fonksiyon",
     level: "Zor",
-    question: "f(x) = 1/(x-2) fonksiyonunun tanım kümesi nedir?",
-    options: { O: "x ≠ 2", N: "x ≠ 0", U: "x > 2", R: "x < 2" },
-    correct: "U",
-    hints: [
-      "Payda 0 olamaz.",
-      "x - 2 = 0 → x = 2.",
-      "Bu değer hariç tüm reel sayılar.",
-      "Sonucu yaz."
-    ],
-    partialSolution: "x ≠ 2.",
-    fullSolution: "Doğru cevap x ≠ 2."
+    question: "1/(x-2) tanım",
+    correctAnswer: "x ≠ 2",
+    wrongAnswers: ["x ≠ 0", "x>2", "x<2"],
+    hints: ["Payda"],
+    partialSolution: "2 olmaz",
+    fullSolution: "x≠2"
   },
-
   {
     id: 19,
-    unit: "Trigonometri",
+    unit: "Trig",
     level: "Zor",
-    question: "tan(45°) kaçtır?",
-    options: { O: "1", N: "0", U: "√3", R: "1/√3" },
-    correct: "R",
-    hints: [
-      "45° özel açıdır.",
-      "sin(45°) = cos(45°).",
-      "tan = sin/cos = 1.",
-      "Sonucu yaz."
-    ],
-    partialSolution: "tan(45°) = 1.",
-    fullSolution: "Doğru cevap 1."
+    question: "tan45",
+    correctAnswer: "1",
+    wrongAnswers: ["0", "√3", "1/√3"],
+    hints: ["sin=cos"],
+    partialSolution: "1",
+    fullSolution: "1"
   },
-
   {
     id: 20,
     unit: "Cebir",
     level: "Zor",
-    question: "x² - 5x + 6 = 0 denkleminin köklerinden biri nedir?",
-    options: { O: "2", N: "3", U: "5", R: "6" },
-    correct: "N",
-    hints: [
-      "Çarpanlara ayır.",
-      "(x-2)(x-3).",
-      "Kökler 2 ve 3.",
-      "Seçeneklerden biri 2."
-    ],
-    partialSolution: "Kökler 2 ve 3.",
-    fullSolution: "Doğru seçenek 2."
+    question: "x²-5x+6",
+    correctAnswer: "2",
+    wrongAnswers: ["3", "5", "6"],
+    hints: ["(x-2)(x-3)"],
+    partialSolution: "2,3",
+    fullSolution: "2"
   }
 ];
 
+
 // ===============================
-//  D E Ğ İ Ş K E N L E R
+//  KOD (DEĞİŞTİRME)
 // ===============================
 
 let currentQuestionIndex = 0;
@@ -361,34 +244,13 @@ const unitEl = document.getElementById("unit");
 const questionTextEl = document.getElementById("question-text");
 const levelEl = document.getElementById("level");
 const stepsEl = document.getElementById("steps");
-
 const optionsBox = document.getElementById("options-box");
-
 const showStepBtn = document.getElementById("show-step-btn");
 const nextQuestionBtn = document.getElementById("next-question-btn");
-
 const timerEl = document.getElementById("timer");
-
 const counterEl = document.getElementById("question-counter");
 const correctCounterEl = document.getElementById("correct-counter");
 const wrongCounterEl = document.getElementById("wrong-counter");
-
-
-// ===============================
-//  S E Ç E N E K   K A R I Ş T I R M A
-// ===============================
-
-function shuffle(array) {
-    return array
-        .map(value => ({ value, sort: Math.random() }))
-        .sort((a, b) => a.sort - b.sort)
-        .map(({ value }) => value);
-}
-
-
-// ===============================
-//  S O R U   Y Ü K L E M E
-// ===============================
 
 function loadQuestion() {
     const q = questions[currentQuestionIndex];
@@ -403,53 +265,47 @@ function loadQuestion() {
     timerEl.textContent = "";
 
     showStepBtn.disabled = true;
-
     counterEl.textContent = `Soru ${currentNumber} / ${totalQuestions}`;
 
-    createOptionCards(q);
+    createOptions(q);
 }
-
-
-// ===============================
-//  R A N D O M   S O R U   S E Ç
-// ===============================
 
 function loadRandomQuestion() {
     currentQuestionIndex = Math.floor(Math.random() * questions.length);
     loadQuestion();
 }
 
+function createOptions(q) {
+    const letters = ["O", "N", "U", "R"];
+    const answers = [q.correctAnswer, ...q.wrongAnswers];
+    const shuffled = answers.sort(() => Math.random() - 0.5);
 
-// ===============================
-//  O N U R   K A R T L A R I
-// ===============================
+    let correctLetter = "";
 
-function createOptionCards(q) {
-    // O, N, U, R harflerini al, karıştır
-    const letters = shuffle(Object.keys(q.options));
-
-    letters.forEach(letter => {
+    letters.forEach((letter, i) => {
         const card = document.createElement("div");
         card.className = "option-card";
-        card.dataset.option = letter;
-        card.textContent = `${letter}) ${q.options[letter]}`;
 
+        const answer = shuffled[i];
+
+        if (answer === q.correctAnswer) {
+            correctLetter = letter;
+        }
+
+        card.textContent = `${letter}) ${answer}`;
         card.addEventListener("click", () => handleAnswer(letter, card));
 
         optionsBox.appendChild(card);
     });
+
+    q.correct = correctLetter;
 }
-
-
-// ===============================
-//  C E V A P   K O N T R O L Ü
-// ===============================
 
 function handleAnswer(selected, card) {
     const q = questions[currentQuestionIndex];
+    const cards = document.querySelectorAll(".option-card");
 
-    const allCards = document.querySelectorAll(".option-card");
-    allCards.forEach(c => c.classList.add("option-disabled"));
+    cards.forEach(c => c.classList.add("option-disabled"));
 
     if (selected === q.correct) {
         card.classList.add("option-correct");
@@ -464,59 +320,37 @@ function handleAnswer(selected, card) {
     showStepBtn.disabled = false;
 }
 
-
-// ===============================
-//  Ç Ö Z Ü M   A D I M L A R I
-// ===============================
-
 function showStep() {
     if (locked) return;
 
     const q = questions[currentQuestionIndex];
     let text = "";
 
-    if (stepIndex < q.hints.length) {
-        text = q.hints[stepIndex];
-    } else if (stepIndex === q.hints.length) {
-        text = q.partialSolution;
-    } else if (stepIndex === q.hints.length + 1) {
-        text = q.fullSolution;
-    } else {
-        showStepBtn.disabled = true;
-        return;
-    }
+    if (stepIndex < q.hints.length) text = q.hints[stepIndex];
+    else if (stepIndex === q.hints.length) text = q.partialSolution;
+    else if (stepIndex === q.hints.length + 1) text = q.fullSolution;
+    else return;
 
     const p = document.createElement("p");
     p.textContent = text;
     stepsEl.appendChild(p);
 
     stepIndex++;
-
-    if (stepIndex > q.hints.length + 1) {
-        showStepBtn.disabled = true;
-        return;
-    }
-
     lockButton();
 }
-
-
-// ===============================
-//  B U T O N   K İ L İ D İ
-// ===============================
 
 function lockButton() {
     locked = true;
     showStepBtn.disabled = true;
 
-    let timeLeft = lockTime;
-    timerEl.textContent = `${timeLeft} saniye bekle`;
+    let time = lockTime;
+    timerEl.textContent = `${time} saniye bekle`;
 
     const interval = setInterval(() => {
-        timeLeft--;
-        timerEl.textContent = `${timeLeft} saniye bekle`;
+        time--;
+        timerEl.textContent = `${time} saniye bekle`;
 
-        if (timeLeft <= 0) {
+        if (time <= 0) {
             clearInterval(interval);
             locked = false;
             showStepBtn.disabled = false;
@@ -525,16 +359,9 @@ function lockButton() {
     }, 1000);
 }
 
-
-// ===============================
-//  S O N R A K İ   S O R U
-// ===============================
-
 function nextQuestion() {
     if (currentNumber >= totalQuestions) {
-        alert("Test bitti! 🎉");
-        nextQuestionBtn.disabled = true;
-        showStepBtn.disabled = true;
+        alert("Test bitti!");
         return;
     }
 
@@ -544,10 +371,5 @@ function nextQuestion() {
 
 nextQuestionBtn.addEventListener("click", nextQuestion);
 showStepBtn.addEventListener("click", showStep);
-
-
-// ===============================
-//  İ L K   S O R U Y U   Y Ü K L E
-// ===============================
 
 loadRandomQuestion();
