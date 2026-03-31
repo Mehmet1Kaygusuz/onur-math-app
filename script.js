@@ -348,6 +348,9 @@ const questions = [
 // ===============================
 //  D E Ğ İ Ş K E N L E R
 // ===============================
+// ===============================
+//  D E Ğ İ Ş K E N L E R
+// ===============================
 
 let currentQuestionIndex = 0;
 let stepIndex = 0;
@@ -377,25 +380,16 @@ const wrongCounterEl = document.getElementById("wrong-counter");
 
 
 // ===============================
-//  S E Ç E N E K   K A R I Ş T I R M A
-// ===============================
-
-function shuffle(array) {
-    return array.sort(() => Math.random() - 0.5);
-}
-
-
-// ===============================
 //  S O R U   Y Ü K L E M E
 // ===============================
 
-function loadRandomQuestion() {
-    currentQuestionIndex = Math.floor(Math.random() * questions.length);
-    loadQuestion();
-}
-
 function loadQuestion() {
     const q = questions[currentQuestionIndex];
+
+    // 🔥 Doğru cevabı random seç
+    const letters = ["O", "N", "U", "R"];
+    const randomCorrect = letters[Math.floor(Math.random() * 4)];
+    q.correct = randomCorrect;
 
     unitEl.textContent = q.unit;
     questionTextEl.textContent = q.question;
@@ -411,6 +405,16 @@ function loadQuestion() {
     counterEl.textContent = `Soru ${currentNumber} / ${totalQuestions}`;
 
     createOptionCards(q);
+}
+
+
+// ===============================
+//  R A N D O M   S O R U   S E Ç
+// ===============================
+
+function loadRandomQuestion() {
+    currentQuestionIndex = Math.floor(Math.random() * questions.length);
+    loadQuestion();
 }
 
 
@@ -432,7 +436,6 @@ function createOptionCards(q) {
         optionsBox.appendChild(card);
     });
 }
-
 
 
 // ===============================
@@ -541,5 +544,8 @@ nextQuestionBtn.addEventListener("click", nextQuestion);
 showStepBtn.addEventListener("click", showStep);
 
 
-// İlk soruyu yükle
+// ===============================
+//  İ L K   S O R U Y U   Y Ü K L E
+// ===============================
+
 loadRandomQuestion();
