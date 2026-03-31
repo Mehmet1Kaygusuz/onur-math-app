@@ -343,11 +343,6 @@ const questions = [
   }
 ];
 
-
-
-// ===============================
-//  D E Ğ İ Ş K E N L E R
-// ===============================
 // ===============================
 //  D E Ğ İ Ş K E N L E R
 // ===============================
@@ -380,16 +375,23 @@ const wrongCounterEl = document.getElementById("wrong-counter");
 
 
 // ===============================
+//  S E Ç E N E K   K A R I Ş T I R M A
+// ===============================
+
+function shuffle(array) {
+    return array
+        .map(value => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value);
+}
+
+
+// ===============================
 //  S O R U   Y Ü K L E M E
 // ===============================
 
 function loadQuestion() {
     const q = questions[currentQuestionIndex];
-
-    // 🔥 Doğru cevabı random seç
-    const letters = ["O", "N", "U", "R"];
-    const randomCorrect = letters[Math.floor(Math.random() * 4)];
-    q.correct = randomCorrect;
 
     unitEl.textContent = q.unit;
     questionTextEl.textContent = q.question;
@@ -423,7 +425,8 @@ function loadRandomQuestion() {
 // ===============================
 
 function createOptionCards(q) {
-    const letters = ["O", "N", "U", "R"]; // SABİT SIRA
+    // O, N, U, R harflerini al, karıştır
+    const letters = shuffle(Object.keys(q.options));
 
     letters.forEach(letter => {
         const card = document.createElement("div");
@@ -528,7 +531,6 @@ function lockButton() {
 // ===============================
 
 function nextQuestion() {
-
     if (currentNumber >= totalQuestions) {
         alert("Test bitti! 🎉");
         nextQuestionBtn.disabled = true;
